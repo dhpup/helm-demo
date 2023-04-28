@@ -7,7 +7,7 @@ spec:
   - clusters:
       selector:
         matchLabels:
-          dev: 'true'
+          dev: 'false'
       values:
         path: dev
   - clusters:
