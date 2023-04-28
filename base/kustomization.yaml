@@ -6,6 +6,7 @@ helmCharts:
   repo: https://charts.bitnami.com/bitnami
   includeCRDs: true
   valuesFile: values.yaml
+  version: 14.0.0
 
 patchesStrategicMerge:
 - deletesvc.yaml
