@@ -5,5 +5,4 @@ helmCharts:
 - name: nginx
   repo: https://charts.bitnami.com/bitnami
   includeCRDs: true
-  namespace: nginx
   valuesFile: values.yaml
