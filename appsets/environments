@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: environments
+spec:
+  generators:
+  - clusters:
+      selector:
+        matchLabels:
+          dev: 'true'
+      values:
+        path: dev
+  - clusters:
+      selector:
+        matchLabels:
+          prod: 'true'
+      values:
+        path: prod
+  template:
+    metadata:
+      name: 'nginx-{{values.path}}-{{name}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/dhpup/helm-demo.git
+        targetRevision: HEAD
+        path: 'env/{{values.path}}'
+      destination:
+        server: '{{server}}'
+        namespace: 'nginx-{{values.path}}'
+      syncPolicy:
+        automated:
+          prune: true
+        syncOptions:
+        - CreateNamespace=true
