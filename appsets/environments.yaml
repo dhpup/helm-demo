@@ -13,7 +13,7 @@ spec:
   - clusters:
       selector:
         matchLabels:
-          prod: 'false'
+          prod: 'true'
       values:
         path: prod
   template:
