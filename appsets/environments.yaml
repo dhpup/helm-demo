@@ -20,7 +20,7 @@ spec:
     metadata:
       name: 'nginx-{{values.path}}-{{name}}'
     spec:
-      project: default
+      project: demo
       source:
         repoURL: https://github.com/dhpup/helm-demo.git
         targetRevision: HEAD
