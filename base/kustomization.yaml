@@ -4,5 +4,5 @@ kind: Kustomization
 helmCharts:
 - name: nginx
   repo: https://charts.bitnami.com/bitnami
-  includeCRDs: true
+  includeCRDs: false
   valuesFile: values.yaml
