@@ -19,6 +19,8 @@ spec:
   template:
     metadata:
       name: 'nginx-{{values.path}}-{{name}}'
+      annotations:
+        kustomize.config.k8s.io/behavior: merge
     spec:
       project: demo
       source:
