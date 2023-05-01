@@ -7,4 +7,8 @@ resources:
 namePrefix: prod-
 
 helmCharts:
-- version: 14.1.0
+- name: nginx
+  repo: https://charts.bitnami.com/bitnami
+  includeCRDs: true
+  valuesFile: values.yaml
+  version: 14.1.0
