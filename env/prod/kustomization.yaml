@@ -5,3 +5,6 @@ resources:
 - ../../base
 
 namePrefix: prod-
+
+helmCharts:
+  version: 14.1.0
